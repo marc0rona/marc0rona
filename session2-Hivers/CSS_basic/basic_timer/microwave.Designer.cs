@@ -1,21 +1,9 @@
 using System.Windows.Forms;
 
-namespace prjWinCs_Ex01_TIMER
+namespace prjWinCs_RPG_BC_Ex01_TIMER
 {
-    partial class Form1
+    partial class microwave
     {
-        /// Required designer variable.
-        private System.ComponentModel.IContainer components = null;
-        /// Clean up any resources being used.
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
 
@@ -27,9 +15,8 @@ namespace prjWinCs_Ex01_TIMER
         private Timer timer1;
         private Label label1;
         private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            this.timer1 = new Timer(this.components);
+        {       
+            this.timer1 = new Timer();
             this.label1 = new Label();
             this.SuspendLayout();
             // 
