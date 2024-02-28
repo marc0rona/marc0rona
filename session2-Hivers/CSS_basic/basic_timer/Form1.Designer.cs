@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace prjWinCs_RPG_BC_Ex01_TIMER
+namespace prjWinCs_Ex01_TIMER
 {
     partial class Form1
     {
