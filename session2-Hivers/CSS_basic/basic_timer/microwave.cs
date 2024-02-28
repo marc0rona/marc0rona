@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace prjWinCs_Ex01_TIMER
 {
-    public partial class Form1 : Form
+    public partial class microwave : Form
     {
         public int _ticks;
         public Form1()
