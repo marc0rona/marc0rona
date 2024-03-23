@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<!-- Nom: Marco-Andrés Mora     Date: 05 février, 2024   Description: Projet - SITE WEB COMPLET -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Template page</title>
+  <script>
+    //admin user qui va toujours exister + Creation du Local Storage pour Users
+    let mainUser = {
+    "names": ["admin"],
+    "passwords" :["12345"]  };
+    window.localStorage.setItem('userList',JSON.stringify(mainUser));
+  </script>
+</head>
+<!-- rows = 1st row takes 120 pixels, 2nd row takes teh rest -->
+<frameset rows="120,*" cols="*"> <!-- cols = Just take whats avaible of pixels in page-->
+  <frame src="./indx1-Titres.html" name="Top_Frame" noresize="noresize" id="Top_Frame" title="Top_Frame" />
+  <!-- rows = Just take whats avaible of pixels in page -->
+  <frameset rows="*" cols="160,*"> <!-- cols = 1st column takes 140 pixels, 2nd column takes rest-->
+    <frame src="./indx2-NoBar.html" name="Menu_Frame" noresize="noresize" id="Menu_Frame" title="Menu_Frame" />
+    <frame src="./indx3-Home.html" name="Content_Frame" id="Content_Frame" title="Content_Frame" />
+  </frameset>
+</frameset>
+</html>
