@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="Users/i3-Creation.css">   
+<title> User Creation </title>
+<!--javascript LINK to UserList.js-->
+<script src="./Users/validation.js"></script>
+</head>
+
+<body bgcolor="Silver">
+<h1> Rejoignez notre communauté! </h1>
+<h2> Cr&#233;ation d'un compte </h2>
+<!-- Form qui gère les nouveau + suprrimer users -->
+<form name="frmLogOut" action="serveur.asp" methode="post">
+<!-- Creation du compte -->
+    <fieldset>
+        <legend>COMPTE</legend>
+        <!--Mettre un username + password pour valider-->
+        <label for="crUser">Username :</label> <br/>
+          <input type="text" size="25" id="crUser" name="crUser" maxlength="10"/> 
+        <br/>
+        <label for="crPassW">Password :</label> <br/>
+          <input type="text" size="25" id="crPassW" name="crPassW" maxlength="10"/> 
+        <br/>
+        <button type="button" id="btnLogIn" onclick="AddUser()"> Cr&#233;er Compte </button> 
+      </fieldset>
+<!-- Supprimer un compte -->
+<h2> Supprimer un compte </h2>
+  <fieldset>
+    <legend>RECHERCHE</legend>
+    <!-- Cherche par un username -->
+    <label for="delUser">Username :</label> <br/>
+      <input type="text" size="25" id="delUser" name="delUser" maxlength="10"/> 
+    <br/> 
+    <!-- Cherche par un username -->
+    <span id="notExist-User"></span> <!--Span où message d'invalidité va être situé-->
+     <!-- Input du password pour valider -->
+    <label for="delPassW" style="display: none" id="lbl-delUser">Verifier Password SVP:</label>
+      <input style="display: none" type="password" size="25" id="delPassW" name="delPassW" maxlength="10"/> 
+   <button type="button" id="btnLogOut" onclick="DeleteUser()"> Valider </button> 
+  </fieldset>
+</form>
+    
+</body>
+</html>
