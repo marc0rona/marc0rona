@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style>
+  body
+  {  background-color: darkred;  }
+  #iLoGo, #iTitre
+  {  float: left;  }
+/* Ajuster le height en function du frameSet dans la page index */
+  div 
+  {  height: 105px; }
+  #iLoGo
+  {
+    width: 30%;
+    background-color: olive;
+  }
+  #iTitre
+  {
+    width: 40%;
+    background-color: yellow;
+  }
+</style>
+ <head>
+     <title>Page En-Tete</title>
+     <!--USING : JQUERY from CDN (Content delivery network) link-->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"> </script>
+    <!--JS qui va valider le LogIn du User et va changer les pages-->
+     <script src="./Users/validation.js"></script>
+ </head>
+ <body>
+
+  <div id="iLoGo"> logo </div>
+  <div id="iTitre"> Title </div>
+  <div id= "uLogin" style="background-color: green;"> 
+    <span id="message"></span>
+    <form name="frmLogIn" action="serveur.asp" methode="post">
+      <input type="text" size="20" id="Username" name="Nom" maxlength="10"/> 
+      <br/>
+      <input type="text" size="20" id="Userpass" name="PassW" maxlength="10"/>
+    <button type="button" id="btnLogIn" onclick="compteUser()"> Connect </button> 
+    </form>
+      <!--Variables qui affiche la date courante si LogIn = valide-->
+      <button style="visibility: hidden;" type="button" id="btnLogOut" onclick="DeconxUser()"> Deconnection </button> 
+  </div>
+ </body>
+</html>
