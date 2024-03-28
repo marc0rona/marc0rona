@@ -1,21 +1,21 @@
 //JQUERY
 $(document).ready(function()
    {  
-    $("#show2").hide();
+    $("#test2").hide();
 /* fonction qui creer l'animation des drapeaux */
-    $("#show1").mouseover
+    $("#test1").mouseover
         (function() //Quand on hover sur drapeau
             {
-                $("#show1").hide();
-                $("#show2").show();
+                $("#test1").hide();
+                $("#test2").show();
             }
         );
 
     $("#show1").mouseout
         (function() //Quand on hover sur drapeau
             {
-                $("#show1").show();
-                $("#show2").hide();
+                $("#test1").show();
+                $("#test2").hide();
             }
         );
    }); 
