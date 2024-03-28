@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/p3-Mapping.css">
+<title> Language Mapping </title>
+<!--USING : JQUERY from CDN (Content delivery network) link-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"> </script>
+    <!--JS qui gere ce qui va etre cacher & montrer dans le Nav-->
+    <script src="./js/p3-flagsNbooks.js"></script>
+</head>
+
+<body bgcolor="darkblue">
+<h1> Voyez tous nos livres de diff&#233;rents languages! </h1>
+<img id="test1" src="./Bookshelf-Test1.png" alt="ChalkBoard" usemap="#Librarymap">
+<img id="test2" src="./Bookshelf-Test2-FlagAnimation.png" alt="Chalk" usemap="#Librarymap2">
+
+<map name="Librarymap">
+    <area id="myarea" shape="rect" coords="34,44,270,350" 
+          alt="BUK" onclick="Popup('LOSER!!')" href="#">
+</map>
+<button type="button" id="btnLogIn" onclick="myFunction() "> test </button>
+<h2> Chequez tous nos livres disponibles! </h2>
+</body>
+</html>
