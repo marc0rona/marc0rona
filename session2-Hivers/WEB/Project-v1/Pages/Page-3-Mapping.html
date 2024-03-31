@@ -3,46 +3,17 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./css/p3-Mapping.css">
 <title> Language Mapping </title>
-    <!--JS qui gere ce qui va etre cacher & montrer dans le Map avec :hover-->
+<!--USING : JQUERY from CDN (Content delivery network) link-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"> </script>
+    <!--JS qui gere ce qui va etre cacher & montrer dans le Nav-->
     <script src="./js/p3-flagsNbooks.js"></script>
 </head>
 
 <body bgcolor="darkblue">
 <h1> Voyez tous nos livres de diff&#233;rents languages! </h1>
-<div style="display: flex">
-<img id="Board" src="./Img/Bookshelf-Test1.png" alt="ChalkBoard" usemap="#Librarymap">
-<table class="BS">
-  <tr>
-    <th class="BS-titres"> Cover </th>
-    <th class="BS-titres"> Titre </th>
-    <th class="BS-titres"> Auteur </th>
-    <th class="BS-titres"> Genre </th>
-    <th class="BS-titres"> Prix </th>
-  </tr>
-
-  <tr>
-    <td class="BS-data">PS2</td>
-    <td class="BS-data">MockingBird</td>
-    <td class="BS-data">Retro NorthGames</td>
-    <td class="BS-data"> 230.00 $ </td>
-    <td class="BS-data"> What </td>
-  </tr>
-</table>
-</div>
-<map name="Librarymap">
-      <area id="frenchFlag"  shape="rect" coords="290,175,125,90" onclick="Popup('here')" href="#">
-      <area id="englishFlag" shape="rect" coords="500,175,335,90" onclick="Popup('here')" href="#">
-      <area id="spanishFlag" shape="rect" coords="705,175,545,90" onclick="Popup('here')" href="#">
-    <area id="allFlags"  shape="rect" coords="755,220,70,5">
-    <!-- coord: 480px height, 220 moitie-->
-      <area id="gnr-SciFi"  shape="rect" coords="225,370,160,280" onclick="Popup('here')">
-      <area id="gnr-Fant" shape="rect" coords="335,370,270,280" onclick="Popup('here')">
-      <area id="gnr-Hist" shape="rect" coords="445,370,380,280" onclick="Popup('here')">
-      <area id="gnr-Realsm" shape="rect" coords="555,370,490,280" onclick="Popup('here')">
-      <area id="gnr-Kids" shape="rect" coords="665,370,600,280" onclick="Popup('here')">
-    <area id="allGenres"  shape="rect" coords="755,480,70,220" onclick="Popup('here')">
-</map>
-
-<h2> Chequez tous nos livres disponibles! </h2>
+<img id="test1" src="./Bookshelf-Test1.png" alt="ChalkBoard" usemap="#Librarymap">
+<img id="test2" src="./Bookshelf-Test2-FlagAnimation.png" alt="Chalk" usemap="#Librarymap2">
 </body>
 </html>
