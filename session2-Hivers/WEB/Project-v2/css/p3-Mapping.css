@@ -1,0 +1,36 @@
+h1, h2
+{
+    color:red
+}
+h2 
+{  margin-left: 220px;   }
+#Board
+{
+    display:inline-flex;
+    float: left;
+}
+/** TABLE CONTENT **/   
+.BS
+{
+    border-width: 4px;
+    border-collapse: collapse;
+    margin-left: 40px;
+    margin-top: 50px;
+    display:inline-flex;
+
+    width: 1500px;
+}
+.BS-data,.BS-titres
+{
+    border: 5px inset #f8bb16;
+    padding: 10px;
+    font-size: 20px;
+    background-color: antiquewhite;
+}
+.BS-titres
+{
+    background-color: tan;
+    font-size: 25px;
+}
+
+p {color: white;}
