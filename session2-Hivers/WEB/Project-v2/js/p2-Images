@@ -1,0 +1,12 @@
+function AccesP3()
+{
+    this.location.href ="Page-3-Mapping.html";
+}
+function AccesP4()
+{
+    this.location.href ="Page-4-Recherches.html";
+}
+function AccesP5()
+{
+  /*toDo*/
+}
