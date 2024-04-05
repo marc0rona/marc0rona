@@ -1,0 +1,59 @@
+/** Top part: CSS pour bienvenue **/
+h1 {
+    color:purple;
+}
+#test1
+{
+    width: 50%; /* Split en 2 (1080 pixels de l'ecran */
+    height: 700px;
+    background-color: yellow;
+    /* Animation Specs */
+    animation: ImgShow 2s ease;
+    animation-fill-mode: forwards; /* animation doesnt Loop */
+}
+
+@keyframes ImgShow 
+{
+   100% { background-color: black;} 
+}
+.test2
+{
+    width: 50%;
+    color: white;
+}
+/** Bottom part: CSS pour figures + images **/
+td
+{  vertical-align: text-top;   }
+.test3
+{
+    background-color: white;
+    border-radius: 16px;
+    width: 340px;
+    padding: 6px 12px 6px 12px; 
+}
+li
+{   
+    padding: 12px; 
+    text-align: justify;   
+    font-size: larger;
+}
+button
+{
+    /* button size */
+    height: 50px;
+    width: 200px;
+    /* lettres + couleurs */
+    font-size:x-large;
+    font-weight: bold;
+    background-color: silver;
+    border-radius: 20px;
+}
+button:hover
+{
+    background-color: darkgray;
+    cursor: pointer; /* Changer au cursor Main*/
+}
+button:active
+{
+    background-color: gray;
+}
