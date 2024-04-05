@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="../main-css/i3-HomePage.css">
+<title> Casa-Tete | Home Page  </title>
+<!--USING : JQUERY from CDN (Content delivery network) link-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"> </script>
+    <!--JS qui gere ce qui va etre cacher & montrer dans le Nav-->
+    <script src="../main-js/MainMenu.js"></script>
+</head>
+
+<body>
+<!-- Titres -->
+<h1> Bienvenue à la Bibliotheque Casa-Tete! </h1>
+<h3> Ou on ne se casse plus la tete pour trouver une bonne lecture</h3>
+<hr/>
+<div style="display:flex;margin-left: 20%;"> 
+  <div class="Navigateur" id="nav1"> Menu1 </div> 
+  <div class="Navigateur" id="nav2"> Menu2 </div> 
+  <div class="Navigateur" id="nav3"> Menu3 </div> 
+  <div class="Navigateur" id="nav4"> Menu4 </div> 
+</div>
+<!-- DISPLAY 1 : DESCRIPTION -->
+<div id="index1"> 
+  <p> Explorez notre vaste collection de livres, où chaque page est une porte ouverte vers l'aventure, la connaissance et l'évasion. </p>
+  <p style="margin-right:20px;"> Plongez dans les mondes imaginaires des romans, les mondes extraordinaires de la Science-Fiction,
+  ou découvrez des civilisations anciennes réelles dans nos livres d'Histoires! Et beaucoup plus ++! </p>
+  <table style="margin-right:20px;">
+  <!--Tableaux pour mettre paragraphes qui decrivent le site-->
+    <tr>
+      <th colspan="2"> SECTION 1 [Types/Genres] </th>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-right:20px;text-align: justify;"> <p> Explorez notre vaste collection de livres, où chaque page est une porte ouverte vers l'aventure, la connaissance et l'évasion. </p>
+        <p> Plongez dans les mondes imaginaires des romans, les mondes extraordinaires de la Science-Fiction,
+        ou découvrez des civilisations anciennes réelles dans nos livres d'Histoires! Et beaucoup plus ++! </td>
+        <td class="imgDroite"> IMG </td>
+    </tr>
+    <tr style="height:20px;"> </tr> <!-- Espacement -->
+    <tr>
+      <th colspan="2" style="padding-bottom: 25px;"> SECTION 2 [Languages] </th>
+    </tr>
+    <tr>
+      <td class="imgGauche"> IMG </td>
+      <!--Ajouter colspan : 2 pour prendres tout l'espace jusqua droite de la page -->
+      <td colspan="2" style="padding-left:20px;"> <p> Explorez notre vaste collection de livres, où chaque page est une porte ouverte vers l'aventure, la connaissance et l'évasion. </p>
+        <p> Plongez dans les mondes imaginaires des romans, les mondes extraordinaires de la Science-Fiction,
+        ou découvrez des civilisations anciennes réelles dans nos livres d'Histoires! Et beaucoup plus ++! </p> </td>
+    </tr>
+    <tr style="height:30px;"> </tr> <!-- Espacement -->
+    <th colspan="2"> SECTION 3 [Liste d'achats] </th>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-right:20px;text-align: justify;"> <p> Explorez notre vaste collection de livres, où chaque page est une porte ouverte vers l'aventure, la connaissance et l'évasion. </p>
+        <p> Plongez dans les mondes imaginaires des romans, les mondes extraordinaires de la Science-Fiction,
+        ou découvrez des civilisations anciennes réelles dans nos livres d'Histoires! Et beaucoup plus ++! </td>
+        <td class="imgDroite"> IMG </td>
+    </tr>
+    <tr style="height:20px;"> </tr> <!-- Espacement -->
+    <tr>
+      <th colspan="2" style="padding-bottom: 25px;"> SECTION 4 [Creez un compte] </th> 
+    </tr>
+    <tr>
+      <td class="imgGauche"> IMG </td>
+      <!--Ajouter colspan : 2 pour prendres tout l'espace jusqua droite de la page -->
+      <td colspan="2" style="padding-left:20px;"> <p> Explorez notre vaste collection de livres, où chaque page est une porte ouverte vers l'aventure, la connaissance et l'évasion. </p>
+        <p> Plongez dans les mondes imaginaires des romans, les mondes extraordinaires de la Science-Fiction,
+        ou découvrez des civilisations anciennes réelles dans nos livres d'Histoires! Et beaucoup plus ++! </p> </td>
+    </tr>
+  </table>
+</div>
+
+<!-- DISPLAY 2 : Choix du sites -->
+<div id="index2"> 
+<h2> <i>Selon NOUS</i> </h2>
+<p class="Desc"> TEXTE TEXTE TEXTE TEXTE TEXTE TEXTE </p>
+<p class="Desc"> image </p>
+</div>
+
+<!-- DISPLAY 3 : Best-Sellers -->
+<div id="index3"> 
+  <h2> Chequez nos Best-Sellers! </h2>
+  <table class="BS">
+    <tr>
+      <th class="BS-titres"> Cover </th>
+      <th class="BS-titres"> Titre </th>
+      <th class="BS-titres"> Auteur </th>
+      <th class="BS-titres"> Genre </th>
+      <th class="BS-titres"> Prix </th>
+    </tr>
+
+    <tr>
+      <td class="BS-data">PS2</td>
+      <td class="BS-data">MockingBird</td>
+      <td class="BS-data">Retro NorthGames</td>
+      <td class="BS-data"> 230.00 $ </td>
+      <td class="BS-data"> What </td>
+    </tr>
+  </table>
+  </div>
+  
+  <div id="index4"> 
+    <h2> <i>Autres Bibliotheques</i> </h2>
+    <a class ="times linkColor" href="https://www.editorialalma.com/libros/veinte-poemas-de-amor-y-una-cancion-desesperada"
+    target="PS2">Lien</a>
+    </div>
+</body>
+</html>
