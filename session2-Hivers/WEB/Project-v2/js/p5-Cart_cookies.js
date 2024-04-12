@@ -21,6 +21,7 @@ function MenuSelect()
     //Using REGEX pour decouper la description en paregraphes
     let paregraphe = Biblio.Description[1].split('\n');
     let itemDesc = document.getElementById("1.desc");
+    itemDesc.textContent = ""; //Vider le paregraphe 
 
     paregraphe.forEach(function(paregraphe) 
     {
