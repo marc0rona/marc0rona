@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/p5-Purchase.css">
+<title> Page d'Achats </title>
+<!--javascript LINK to Cart.js-->
+<script src="./js/p5-Cart_cookies.js"></script>
+</head>
+
+<body>
+ <!--Affiche le chariot de l'utilisateur avec une liste de tous ce qui va acheter -->
+ <!-- Info qui serviron pour la page qui calculera les taxes -->
+  <div id="ShoppingCart">  
+    <h3 style="margin-bottom: 5px"> Aller Page de Confirmation </h3>
+    <button type="button" id="Basket" onclick="AccesP6()"> 
+      <img src="./Img/img Canada $/10$.JPG" alt="basket" width="150px">
+    </button>
+    <div id="List-Alignement"> 
+      <span style="margin-left: 35px"> Shopping List </span>
+      <div id="ShoppingList"> <!--Inserer INFO ici avec JavaScript --> </div>
+      <p> <button type="button" id="btnReset" onclick="DeleteItems()"> Remove Items </button> </p>
+    </div>
+  </div> 
+  <!-- L'Utilisateur peut choisir & va afficher un type de Genre-->
+  <select id="genreDropList" name="DropList" onchange="MenuSelect()">
+    <option value="All"> Tous nos livres </option>
+    <option value="SciFi"> Science-Fiction </option>
+    <option value="Fantasy"> Fantastique </option>
+    <option value="Realism"> Realisme</option>
+    <option value="History"> Histoire </option>
+    <option value="Comics"> Bande-Dessinees </option>
+  </select>
+  <p>You selected: <span id="testing"> All </span></p>
+
+
+  <!----- DEBUT AFFICHAGE DES CHOIX ----->
+  <table style="margin-left: 10%;">
+      <tr>
+        <!--- r1: 1e Colonne --->
+        <td> <figure>
+          <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh1" width="180px" style="margin-left: 75px;">
+          <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+          <figcaption class="test3">
+          <div id="TitleContainer" style="display: inline;">
+            <select id="LangDropList" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+              <option value="" disabled selected>Select Langue</option>
+              <option value="French"> Francais </option>
+              <option value="English"> Anglais </option>
+              <option value="Spanish"> Espagnol </option>
+            </select>
+            <p id="1.BookID" style="margin-top: 0px;"> <!-- ID va afficher ici --> </p> 
+           </div>
+            <p> Titres : <span id="1.titres"> </span> </p> 
+            <p> Auteur : <span id="1.auteur"> </span> </p> 
+            <p> Publication : <span id="1.pub"> </span> </p> 
+            <p> Pages : <span id="1.pages"> </span>  </p> 
+            <p> Genre : <span id="1.genre"> </span> </p> 
+            <p> Description : </p> 
+            <p id="1.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+          </figcaption>
+          <!-- Button pour ajouter item dans le panier-->
+          <button type="button" class="btnSearch" onclick="AddItem('1.BookID','1.titres')"> ADD TO CART </button> 
+        </figure> </td>
+        <!--- r1: 2me Colonne --->
+        <td> <figure>
+          <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh2" width="180px" style="margin-left: 75px;">
+          <!-- TAB 2 : Infos -->
+          <figcaption class="test3">
+            <div id="TitleContainer" style="display: inline;">
+              <select id="LangDropList" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+                <option value="" disabled selected>Select Langue</option>
+                <option value="French"> Francais </option>
+                <option value="English"> Anglais </option>
+                <option value="Spanish"> Espagnol </option>
+              </select>
+              <p id="2.BookID" style="margin-top: 0px;"></p> 
+             </div>
+            <p> Titres : <span id="2.titres"> </span> </p> 
+            <p> Auteur : <span id="2.auteur"> </span> </p> 
+            <p> Publication : <span id="2.pub"> </span> </p> 
+            <p> Pages : <span id="2.pages"> </span> </p> 
+            <p> Genre : <span id="2.genre"> </span> </p> 
+            <p> Description : </p> 
+            <p id="2.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+          </figcaption>
+          <!-- Button pour ajouter item dans le panier-->
+          <button type="button" class="btnSearch" onclick="AddItem('2.BookID','2.titres')"> ADD TO CART </button>
+        </figure> </td>
+        <!--- r1: 3me Colonne --->
+        <td> <figure>
+          <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh3" width="180px" style="margin-left: 75px;">
+           <figcaption class="test3">
+           <!-- TAB 3 : Infos -->
+            <p id="3.BookID" style="text-align: center;margin-top: 0px;"></p> 
+            <p> Titres : <span id="1.titres"> </span> </p> 
+            <p> Auteur : <span id="1.auteur"> </span> </p> 
+            <p> Publication : <span id="1.pub"> </span> </p> 
+            <p> Pages : <span id="1.pages"> </span> </p> 
+            <p> Genre - <span id="1.genre"> </span> </p> 
+            <p> Description : </p> 
+            <p id="1.desc" style="text-align: justify;padding: 10px;"> </p> 
+          </figcaption>
+         <!-- Button pour ajouter item dans le panier-->
+          <button type="button" class="btnSearch" onclick="AddItem('3.BookID','3.titres')"> ADD TO CART </button>
+        </figure> 
+        </td>
+      </tr>
+    <!--- Ranger 2 --->
+    <tr>
+      <!--- r2: 1e Colonne --->
+      <td> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh1" width="180px" style="margin-left: 75px;">
+        <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+        <figcaption class="test3">
+          <p id="4.BookID" style="text-align: center;margin-top: 0px;"></p> 
+          <p> Titres : <span id="1.titres"> </span> </p> 
+          <p> Auteur : <span id="1.auteur"> </span> </p> 
+          <p> Publication : <span id="1.pub"> </span> </p> 
+          <p> Pages : <span id="1.pages"> </span>  </p> 
+          <p> Genre - <span id="1.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="1.desc" style="text-align: justify;padding: 10px;"> </p> 
+        </figcaption>
+      </figure> </td>
+      <!--- r2: 2me Colonne --->
+      <td> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh2" width="180px" style="margin-left: 75px;">
+        <figcaption class="test3">
+          <!-- TAB 2 : Infos -->
+          <p id="5.BookID" style="text-align: center;margin-top: 0px;"></p> 
+          <p> Titres : <span id="1.titres"> </span> </p> 
+          <p> Auteur : <span id="1.auteur"> </span> </p> 
+          <p> Publication : <span id="1.pub"> </span> </p> 
+          <p> Pages : <span id="1.pages"> </span> </p> 
+          <p> Genre - <span id="1.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="1.desc" style="text-align: justify;padding: 10px;"> </p> 
+        </figcaption>
+      </figure> </td>
+      <!--- r2: 3me Colonne --->
+      <td> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh3" width="180px" style="margin-left: 75px;">
+        <figcaption class="test3">
+         <!-- TAB 3 : Infos -->
+          <p id="6.BookID" style="text-align: center;margin-top: 0px;"></p> 
+          <p> Titres : <span id="1.titres"> </span> </p> 
+          <p> Auteur : <span id="1.auteur"> </span> </p> 
+          <p> Publication : <span id="1.pub"> </span> </p> 
+          <p> Pages : <span id="1.pages"> </span> </p> 
+          <p> Genre - <span id="1.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="1.desc" style="text-align: justify;padding: 10px;"> </p> 
+        </figcaption>
+      </figure> 
+      </td>
+    </tr>
+  <!-- Rangee qui va contenir les boutton -->
+    <tr>
+      <th> <button type="button" id="btnSearch" onclick="AccesP3()"> ADD TO CART </button> </th>
+      <th> <button type="button" id="btnSearch" onclick="AccesP4()"> ADD TO CART </button> </th>
+      <th> <button type="button" id="btnSearch" onclick="AccesP5()"> ADD TO CART </button> </th>
+    </tr>
+
+    </table>
+     <!-- IMPORTANT : JavaScript qui inclue le JSON de TOUTES les livres (Bibliotheque)-->
+     <script src="./js/Full-LibraryJSON.js"></script>
+</body>
+</html>
