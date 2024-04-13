@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/p5-Purchase.css">
+<title> Page d'Achats </title>
+<!--USING : JQUERY from CDN (Content delivery network) link-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"> </script>
+<!--javascript LINK to Cart.js-->
+<script src="./js/p5-Cart_cookies.js"></script>
+</head>
+
+<body>
+ <!--Affiche le chariot de l'utilisateur avec une liste de tous ce qui va acheter -->
+ <!-- Info qui serviron pour la page qui calculera les taxes -->
+ <div id="Basket">  
+    <h3 id="SousTitres" style="margin-bottom: 5px;text-align: center;"> PASSEZ A <br/> LA COMMANDE </h3>
+    <button type="button" id="btnReady" onclick="AccesP6()"> 
+      <img src="./Img/img Canada $/10$.JPG" alt="basket" width="150px">
+    </button>
+      <div id="ShoppingCart"> 
+        <button type="button" id="btnReset" onclick="DeleteItems()" style="margin-top: 10px;margin-left: 30px;"> Remove Items </button>
+          <div id="ShoppingList"> <!--Inserer INFO ici avec JavaScript --> </div>  
+      </div> 
+      <!--buttons pour effacer la liste + Cacher || Afficher liste-->
+    <div style="display: flex;margin-top: 10px;margin-bottom: 10px;">
+      <span style="padding-left: 40px;">Shopping List</span>
+      <button type="button" id="btnShow" style="margin-left: 10px;"> + </button> 
+      <button type="button" id="btnHide" style="margin-left: 10px;"> - </button> 
+    </div>
+  </div>
+
+  <!-- L'Utilisateur peut choisir & va afficher un type de Genre-->
+  <select id="genreDropList" name="DropList" onchange="MenuSelect()">
+    <option value="" disabled selected> Faites votre choix </option> <!--Titres : Default -->
+    <option value="All"> Tous nos livres </option>
+    <option value="Science-Fiction"> Science-Fiction </option>
+    <option value="Fantastique"> Fantastique </option>
+    <option value="Realisme"> Realisme </option>
+    <option value="Histoire"> Histoire </option>
+    <option value="Comics"> Bande-Dessinees </option>
+  </select>
+
+<!-- DEBUT AFFICHAGE DES CHOIX -->
+  <table style="margin-left: 8%;visibility: hidden;">
+      <tr>
+        <!-- r1: 1e Colonne -->
+        <td id="TAB-1"> <figure>
+          <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh1" width="180px" style="margin-left: 75px;">
+          <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+          <figcaption class="test3">
+          <div id="TitleContainer" style="display: inline;">
+            <select id="LangDropList-1" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+              <option value="" disabled selected>Select Langue</option>
+              <option value="French"> Francais </option>
+              <option value="English"> Anglais </option>
+              <option value="Spanish"> Espagnol </option>
+            </select>
+            <p id="1.BookID" style="margin-top: 0px;"> <!-- ID va afficher ici -->NaN</p> 
+           </div>
+            <p> Titres : <span id="1.titres"> </span> </p> 
+            <p> Auteur : <span id="1.auteur"> </span> </p> 
+            <p> Publication : <span id="1.pub"> </span> </p> 
+            <p> Pages : <span id="1.pages"> </span>  </p> 
+            <p> Genre : <span id="1.genre"> </span> </p> 
+            <p> Description : </p> 
+            <p id="1.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+            <p> PRIX : <span id="1.prix"> </span> $ </p> 
+          </figcaption>
+          <!-- Button pour ajouter item dans le panier-->
+          <button type="button" class="btnSearch" onclick="AddItem('1.titres','1.prix')"> ADD TO CART </button> 
+        </figure> </td>
+
+        <!-- r1: 2me Colonne -->
+        <td id="TAB-2"> <figure>
+          <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh2" width="180px" style="margin-left: 75px;">
+          <!-- TAB 2 : Infos -->
+          <figcaption class="test3">
+            <div id="TitleContainer" style="display: inline;">
+              <select id="LangDropList-2" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+                <option value="" disabled selected>Select Langue</option>
+                <option value="French"> Francais </option>
+                <option value="English"> Anglais </option>
+                <option value="Spanish"> Espagnol </option>
+              </select>
+              <p id="2.BookID" style="margin-top: 0px;">NaN</p> 
+             </div>
+            <p> Titres : <span id="2.titres"> </span> </p> 
+            <p> Auteur : <span id="2.auteur"> </span> </p> 
+            <p> Publication : <span id="2.pub"> </span> </p> 
+            <p> Pages : <span id="2.pages"> </span> </p> 
+            <p> Genre : <span id="2.genre"> </span> </p> 
+            <p> Description : </p> 
+            <p id="2.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+            <p> PRIX : <span id="2.prix"> </span> $ </p> 
+          </figcaption>
+          <!-- Button pour ajouter item dans le panier-->
+          <button type="button" class="btnSearch" onclick="AddItem('2.titres','2.prix')"> ADD TO CART </button>
+        </figure> </td>
+
+        <!-- r1: 3me Colonne -->
+        <td id="TAB-3"> <figure>
+          <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh3" width="180px" style="margin-left: 75px;">
+          <!-- TAB 3 : Infos -->
+           <figcaption class="test3">
+            <div id="TitleContainer" style="display: inline;">
+              <select id="LangDropList-3" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;overflow: auto;">
+                <option value="" disabled selected>Select Langue</option>
+                <option value="French"> Francais </option>
+                <option value="English"> Anglais </option>
+                <option value="Spanish"> Espagnol </option>
+              </select>
+              <p id="3.BookID" style="margin-top: 0px;">NaN</p> 
+             </div> 
+            <p> Titres : <span id="3.titres"> </span> </p> 
+            <p> Auteur : <span id="3.auteur"> </span> </p> 
+            <p> Publication : <span id="3.pub"> </span> </p> 
+            <p> Pages : <span id="3.pages"> </span> </p> 
+            <p> Genre - <span id="3.genre"> </span> </p> 
+            <p> Description : </p> 
+            <p id="3.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;">  </p> 
+            <p> PRIX : <span id="3.prix"> </span> $ </p> 
+          </figcaption>
+         <!-- Button pour ajouter item dans le panier-->
+          <button type="button" class="btnSearch" onclick="AddItem('3.titres','3.prix')"> ADD TO CART </button>
+        </figure> 
+        </td>
+      </tr>
+
+    <!-- Ranger 2 -->
+    <tr>
+      <!-- r2: 1e Colonne -->
+      <td id="TAB-4"> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh4" width="180px" style="margin-left: 75px;">
+        <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+        <figcaption class="test3">
+        <div id="TitleContainer" style="display: inline;">
+          <select id="LangDropList-4" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+            <option value="" disabled selected>Select Langue</option>
+            <option value="French"> Francais </option>
+            <option value="English"> Anglais </option>
+            <option value="Spanish"> Espagnol </option>
+          </select>
+          <p id="4.BookID" style="margin-top: 0px;"> <!-- ID va afficher ici -->NaN</p> 
+         </div>
+          <p> Titres : <span id="4.titres"> </span> </p> 
+          <p> Auteur : <span id="4.auteur"> </span> </p> 
+          <p> Publication : <span id="4.pub"> </span> </p> 
+          <p> Pages : <span id="4.pages"> </span>  </p> 
+          <p> Genre : <span id="4.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="4.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+          <p> PRIX : <span id="4.prix"> </span> $ </p> 
+        </figcaption>
+        <!-- Button pour ajouter item dans le panier-->
+        <button type="button" class="btnSearch" onclick="AddItem('4.titres','4.prix')"> ADD TO CART </button> 
+      </figure> </td>
+
+      <!-- r2: 2me Colonne -->
+      <td id="TAB-5"> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh5" width="180px" style="margin-left: 75px;">
+        <!-- TAB 2 : Infos -->
+        <figcaption class="test3">
+          <div id="TitleContainer" style="display: inline;">
+            <select id="LangDropList-5" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+              <option value="" disabled selected>Select Langue</option>
+              <option value="French"> Francais </option>
+              <option value="English"> Anglais </option>
+              <option value="Spanish"> Espagnol </option>
+            </select>
+            <p id="5.BookID" style="margin-top: 0px;">NaN</p> 
+           </div>
+          <p> Titres : <span id="5.titres"> </span> </p> 
+          <p> Auteur : <span id="5.auteur"> </span> </p> 
+          <p> Publication : <span id="5.pub"> </span> </p> 
+          <p> Pages : <span id="5.pages"> </span> </p> 
+          <p> Genre : <span id="5.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="5.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+          <p> PRIX : <span id="5.prix"> </span> $ </p> 
+        </figcaption>
+        <!-- Button pour ajouter item dans le panier-->
+        <button type="button" class="btnSearch" onclick="AddItem('5.titres','5.prix')"> ADD TO CART </button>
+      </figure> </td>
+
+      <!-- r2: 3me Colonne -->
+      <td id="TAB-6"> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScS6" width="180px" style="margin-left: 75px;">
+        <!-- TAB 3 : Infos -->
+         <figcaption class="test3">
+          <div id="TitleContainer" style="display: inline;">
+            <select id="LangDropList-6" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;overflow: auto;">
+              <option value="" disabled selected>Select Langue</option>
+              <option value="French"> Francais </option>
+              <option value="English"> Anglais </option>
+              <option value="Spanish"> Espagnol </option>
+            </select>
+            <p id="6.BookID" style="margin-top: 0px;">NaN</p> 
+           </div> 
+          <p> Titres : <span id="6.titres"> </span> </p> 
+          <p> Auteur : <span id="6.auteur"> </span> </p> 
+          <p> Publication : <span id="6.pub"> </span> </p> 
+          <p> Pages : <span id="6.pages"> </span> </p> 
+          <p> Genre - <span id="6.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="6.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;">  </p> 
+          <p> PRIX : <span id="6.prix"> </span> $ </p> 
+        </figcaption>
+       <!-- Button pour ajouter item dans le panier-->
+        <button type="button" class="btnSearch" onclick="AddItem('6.titres','6.prix')"> ADD TO CART </button>
+      </figure> 
+      </td>
+    </tr>
+
+ <!-- Ranger 3 -->
+    <tr>
+      <!-- r3: 1e Colonne -->
+      <td id="TAB-7"> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh7" width="180px" style="margin-left: 75px;">
+        <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+        <figcaption class="test3">
+        <div id="TitleContainer" style="display: inline;">
+          <select id="LangDropList-7" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+            <option value="" disabled selected>Select Langue</option>
+            <option value="French"> Francais </option>
+            <option value="English"> Anglais </option>
+            <option value="Spanish"> Espagnol </option>
+          </select>
+          <p id="7.BookID" style="margin-top: 0px;"><!-- ID va afficher ici -->NaN</p> 
+         </div>
+          <p> Titres : <span id="7.titres"> </span> </p> 
+          <p> Auteur : <span id="7.auteur"> </span> </p> 
+          <p> Publication : <span id="7.pub"> </span> </p> 
+          <p> Pages : <span id="7.pages"> </span>  </p> 
+          <p> Genre : <span id="7.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="7.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+          <p> PRIX : <span id="7.prix"> </span> $ </p> 
+        </figcaption>
+        <!-- Button pour ajouter item dans le panier-->
+        <button type="button" class="btnSearch" onclick="AddItem('7.titres','7.prix')"> ADD TO CART </button> 
+      </figure> </td>
+
+      <!-- r3: 2me Colonne -->
+      <td id="TAB-8"> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh8" width="180px" style="margin-left: 75px;">
+        <!-- TAB 2 : Infos -->
+        <figcaption class="test3">
+          <div id="TitleContainer" style="display: inline;">
+            <select id="LangDropList-8" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+              <option value="" disabled selected>Select Langue</option>
+              <option value="French"> Francais </option>
+              <option value="English"> Anglais </option>
+              <option value="Spanish"> Espagnol </option>
+            </select>
+            <p id="8.BookID" style="margin-top: 0px;">NaN</p> 
+           </div>
+          <p> Titres : <span id="8.titres"> </span> </p> 
+          <p> Auteur : <span id="8.auteur"> </span> </p> 
+          <p> Publication : <span id="8.pub"> </span> </p> 
+          <p> Pages : <span id="8.pages"> </span> </p> 
+          <p> Genre : <span id="8.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="8.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+          <p> PRIX : <span id="8.prix"> </span> $ </p> 
+        </figcaption>
+        <!-- Button pour ajouter item dans le panier-->
+        <button type="button" class="btnSearch" onclick="AddItem('8.titres','8.prix')"> ADD TO CART </button>
+      </figure> </td>
+
+      <!-- r3: 3me Colonne -->
+      <td id="TAB-9"> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh9" width="180px" style="margin-left: 75px;">
+        <!-- TAB 3 : Infos -->
+         <figcaption class="test3">
+          <div id="TitleContainer" style="display: inline;">
+            <select id="LangDropList-9" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;overflow: auto;">
+              <option value="" disabled selected>Select Langue</option>
+              <option value="French"> Francais </option>
+              <option value="English"> Anglais </option>
+              <option value="Spanish"> Espagnol </option>
+            </select>
+            <p id="9.BookID" style="margin-top: 0px;">NaN</p> 
+           </div> 
+          <p> Titres : <span id="9.titres"> </span> </p> 
+          <p> Auteur : <span id="9.auteur"> </span> </p> 
+          <p> Publication : <span id="9.pub"> </span> </p> 
+          <p> Pages : <span id="9.pages"> </span> </p> 
+          <p> Genre - <span id="9.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="9.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;">  </p> 
+          <p> PRIX : <span id="9.prix"> </span> $ </p> 
+        </figcaption>
+       <!-- Button pour ajouter item dans le panier-->
+        <button type="button" class="btnSearch" onclick="AddItem('9.titres','9.prix')"> ADD TO CART </button>
+      </figure> 
+      </td>
+    </tr>
+
+  <!-- Ranger 4 -->
+  <tr>
+    <!-- r4: 1e Colonne -->
+    <td id="TAB-10"> <figure>
+      <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh10" width="180px" style="margin-left: 75px;">
+      <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+      <figcaption class="test3">
+      <div id="TitleContainer" style="display: inline;">
+        <select id="LangDropList-10" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+          <option value="" disabled selected>Select Langue</option>
+          <option value="French"> Francais </option>
+          <option value="English"> Anglais </option>
+          <option value="Spanish"> Espagnol </option>
+        </select>
+        <p id="10.BookID" style="margin-top: 0px;"><!-- ID va afficher ici -->NaN</p> 
+       </div>
+        <p> Titres : <span id="10.titres"> </span> </p> 
+        <p> Auteur : <span id="10.auteur"> </span> </p> 
+        <p> Publication : <span id="10.pub"> </span> </p> 
+        <p> Pages : <span id="10.pages"> </span>  </p> 
+        <p> Genre : <span id="10.genre"> </span> </p> 
+        <p> Description : </p> 
+        <p id="10.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+        <p> PRIX : <span id="10.prix"> </span> $ </p> 
+      </figcaption>
+      <!-- Button pour ajouter item dans le panier-->
+      <button type="button" class="btnSearch" onclick="AddItem('10.titres','10.prix')"> ADD TO CART </button> 
+    </figure> </td>
+
+    <!-- r4: 2me Colonne -->
+    <td id="TAB-11"> <figure>
+      <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh11" width="180px" style="margin-left: 75px;">
+      <!-- TAB 2 : Infos -->
+      <figcaption class="test3">
+        <div id="TitleContainer" style="display: inline;">
+          <select id="LangDropList-11" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+            <option value="" disabled selected>Select Langue</option>
+            <option value="French"> Francais </option>
+            <option value="English"> Anglais </option>
+            <option value="Spanish"> Espagnol </option>
+          </select>
+          <p id="11.BookID" style="margin-top: 0px;">NaN</p> 
+         </div>
+        <p> Titres : <span id="11.titres"> </span> </p> 
+        <p> Auteur : <span id="11.auteur"> </span> </p> 
+        <p> Publication : <span id="11.pub"> </span> </p> 
+        <p> Pages : <span id="11.pages"> </span> </p> 
+        <p> Genre : <span id="11.genre"> </span> </p> 
+        <p> Description : </p> 
+        <p id="11.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+        <p> PRIX : <span id="11.prix"> </span> $ </p> 
+      </figcaption>
+      <!-- Button pour ajouter item dans le panier-->
+      <button type="button" class="btnSearch" onclick="AddItem('11.titres','11.prix')"> ADD TO CART </button>
+    </figure> </td>
+
+    <!-- r4: 3me Colonne -->
+    <td id="TAB-12"> <figure>
+      <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScS12" width="180px" style="margin-left: 75px;">
+      <!-- TAB 3 : Infos -->
+       <figcaption class="test3">
+        <div id="TitleContainer" style="display: inline;">
+          <select id="LangDropList-12" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;overflow: auto;">
+            <option value="" disabled selected>Select Langue</option>
+            <option value="French"> Francais </option>
+            <option value="English"> Anglais </option>
+            <option value="Spanish"> Espagnol </option>
+          </select>
+          <p id="12.BookID" style="margin-top: 0px;">NaN</p> 
+         </div> 
+        <p> Titres : <span id="12.titres"> </span> </p> 
+        <p> Auteur : <span id="12.auteur"> </span> </p> 
+        <p> Publication : <span id="12.pub"> </span> </p> 
+        <p> Pages : <span id="12.pages"> </span> </p> 
+        <p> Genre - <span id="12.genre"> </span> </p> 
+        <p> Description : </p> 
+        <p id="12.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;">  </p> 
+        <p> PRIX : <span id="12.prix"> </span> $ </p> 
+      </figcaption>
+     <!-- Button pour ajouter item dans le panier-->
+      <button type="button" class="btnSearch" onclick="AddItem('12.titres','12.prix')"> ADD TO CART </button>
+    </figure> 
+    </td>
+  </tr>
+
+<!-- Ranger 5 -->
+<tr>
+  <!-- r5: 1e Colonne -->
+  <td id="TAB-13"> <figure>
+    <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh13" width="180px" style="margin-left: 75px;">
+    <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+    <figcaption class="test3">
+    <div id="TitleContainer" style="display: inline;">
+      <select id="LangDropList-13" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+        <option value="" disabled selected>Select Langue</option>
+        <option value="French"> Francais </option>
+        <option value="English"> Anglais </option>
+        <option value="Spanish"> Espagnol </option>
+      </select>
+      <p id="13.BookID" style="margin-top: 0px;"><!-- ID va afficher ici -->NaN</p> 
+     </div>
+      <p> Titres : <span id="13.titres"> </span> </p> 
+      <p> Auteur : <span id="13.auteur"> </span> </p> 
+      <p> Publication : <span id="13.pub"> </span> </p> 
+      <p> Pages : <span id="13.pages"> </span>  </p> 
+      <p> Genre : <span id="13.genre"> </span> </p> 
+      <p> Description : </p> 
+      <p id="13.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+      <p> PRIX : <span id="13.prix"> </span> $ </p> 
+    </figcaption>
+    <!-- Button pour ajouter item dans le panier-->
+    <button type="button" class="btnSearch" onclick="AddItem('13.titres','13.prix')"> ADD TO CART </button> 
+  </figure> </td>
+
+  <!-- r5: 2me Colonne -->
+  <td id="TAB-14"> <figure>
+    <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScSh14" width="180px" style="margin-left: 75px;">
+    <!-- TAB 2 : Infos -->
+    <figcaption class="test3">
+      <div id="TitleContainer" style="display: inline;">
+        <select id="LangDropList-14" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;">
+          <option value="" disabled selected>Select Langue</option>
+          <option value="French"> Francais </option>
+          <option value="English"> Anglais </option>
+          <option value="Spanish"> Espagnol </option>
+        </select>
+        <p id="14.BookID" style="margin-top: 0px;">NaN</p> 
+       </div>
+      <p> Titres : <span id="14.titres"> </span> </p> 
+      <p> Auteur : <span id="14.auteur"> </span> </p> 
+      <p> Publication : <span id="14.pub"> </span> </p> 
+      <p> Pages : <span id="14.pages"> </span> </p> 
+      <p> Genre : <span id="14.genre"> </span> </p> 
+      <p> Description : </p> 
+      <p id="14.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> </p> 
+      <p> PRIX : <span id="14.prix"> </span> $ </p> 
+    </figcaption>
+    <!-- Button pour ajouter item dans le panier-->
+    <button type="button" class="btnSearch" onclick="AddItem('14.titres','14.prix')"> ADD TO CART </button>
+  </figure> </td>
+
+  <!-- r5: 3me Colonne -->
+  <td id="TAB-15"> <figure>
+    <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="ScS15" width="180px" style="margin-left: 75px;">
+    <!-- TAB 3 : Infos -->
+     <figcaption class="test3">
+      <div id="TitleContainer" style="display: inline;">
+        <select id="LangDropList-15" name="Languages" onchange="ChangeLangue()" style="float :right; margin-top: 0px;overflow: auto;">
+          <option value="" disabled selected>Select Langue</option>
+          <option value="French"> Francais </option>
+          <option value="English"> Anglais </option>
+          <option value="Spanish"> Espagnol </option>
+        </select>
+        <p id="15.BookID" style="margin-top: 0px;">NaN</p> 
+       </div> 
+      <p> Titres : <span id="15.titres"> </span> </p> 
+      <p> Auteur : <span id="15.auteur"> </span> </p> 
+      <p> Publication : <span id="15.pub"> </span> </p> 
+      <p> Pages : <span id="15.pages"> </span> </p> 
+      <p> Genre - <span id="15.genre"> </span> </p> 
+      <p> Description : </p> 
+      <p id="15.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;">  </p>
+      <p> PRIX : <span id="15.prix"> </span> $ </p>  
+    </figcaption>
+   <!-- Button pour ajouter item dans le panier-->
+    <button type="button" class="btnSearch" onclick="AddItem('15.titres','15.prix')"> ADD TO CART </button>
+  </figure> 
+  </td>
+</tr>
+
+</table>
+  <!-- IMPORTANT : JavaScript qui inclue le JSON de TOUTES les livres (Bibliotheque)-->
+<script src="./js/Full-LibraryJSON.js"></script>
+</body>
+</html>
