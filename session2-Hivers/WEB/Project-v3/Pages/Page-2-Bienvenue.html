@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/p2-Description.css">
+<title> Bienvenue </title>
+ <!-- JS qui gere les buttons qui amenes au autres pages -->
+ <script type="text/javascript">
+  function AccesP3()
+  {
+     this.location.href ="Page-3-Mapping.html";
+  }
+  function AccesP4()
+  {
+     this.location.href ="Page-4-Recherches.html";
+  }
+  function AccesP5()
+  {
+    this.location.href ="Page-5-Achats.html";
+  }
+ </script>
+</head>
+
+<body bgcolor="darkorange">
+<h1> Merci de nous avoir joindre! </h1>    
+<h2> Maintenant, profitez! </h2>
+<div style="display:flex;">
+    <img id="THUMBSUP" src="./Img/ThumbsUp-guy.png" alt="ScSh12">
+    <div class="WelcomePargraph">
+      <p> Ici, chaque livre est une porte ouverte sur un monde nouveau, où les récits foisonnent et les aventures n'attendent que d'être vécues. </p>
+      
+      <p> Que vous soyez passionné par la science-fiction, envoûté par le fantastique, captivé par l'histoire ou fasciné par les bandes dessinées, notre collection éclectique vous promet des heures de découvertes enrichissantes.</p>
+
+      <p> Parcourez nos rayons virtuels où les livres se dressent comme des sentinelles, prêts à vous emmener dans des voyages extraordinaires. </p>
+
+      <p> Laissez-vous happer par des univers étranges et des personnages hors du commun, plongez dans les méandres du passé ou laissez-vous emporter par des récits réalistes qui résonnent avec la vie telle que nous la connaissons. </p>
+
+      <p> Que vous cherchiez à vous évader, à vous instruire ou simplement à vous divertir, la Bibliothèque Virtuelle Universelle vous accompagne à chaque page tournée. </p>
+      
+      <p> Découvrez de nouveaux auteurs, redécouvrez des classiques intemporels et laissez-vous surprendre par la richesse et la diversité de notre collection. </p>
+    </div>
+</div>
+<br/><br/><br/>   
+<table>
+  <tr>
+    <td> <figure style="text-align: center;">
+      <img src="./Img/p3-Drapeaux.png" alt="ScSh12" width="270px">
+      <figcaption class="figContainer">
+        <li> Une vari&#233;t&#233; de diff&#233;rentes langues </li>
+        <li> Fran&#231;ais, Anglais et Espagnol </li>
+        <li> Prix ne change pas quand vous changez de langue! </li>
+      </figcaption>
+    </figure> 
+    </td>
+    <td> <figure style="text-align: center;">
+      <img src="./Img/p5-Bibliotheque.png" alt="ScSh13" width="270px">
+      <figcaption class="figContainer">
+        <li> Un r&#233;pertoire de plus de 30 livres </li>
+        <li style="text-align: left;"> Science-Fiction, Fantastique, R&#233;alisme, Histoire et Bande-D&#233;ssin&#233;s </li>
+        <li> Allez faire une petite Recherche vite pour voir quel genre vous plait  </li>
+      </figcaption>
+    </figure> 
+    </td>
+    <td> <figure style="text-align: center;">
+      <img src="./Img/p4-GigaChad.png" alt="ScSh14" width="270px">
+      <figcaption class="figContainer">
+        <li> Contactez nous! </li>
+        <li> Si vous ne pouvez pas int&#233;ragir bien avec le site ou vous avez des probl&#232;mes, ne h&#233;sit&#233; pas de nous faire savoir</li>
+      </figcaption>
+    </figure> 
+    </td>
+  </tr>
+<!-- Rangee qui va contenir les boutton -->
+  <tr>
+    <th> <button type="button" id="btnSearch" onclick="AccesP3()"> Acceder p.3 </button> </th>
+    <th> <button type="button" id="btnSearch" onclick="AccesP4()"> Acceder p.4 </button> </th>
+    <th> <button type="button" id="btnSearch" onclick="AccesP5()"> Acceder p.5 </button> </th>
+  </tr>
+  </table>
+  
+</body>
+</html>

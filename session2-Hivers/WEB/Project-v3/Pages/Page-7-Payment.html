@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/p7-payement.css">
+<title> Page 7 </title>
+<script src="./js/p7-Finale.js"></script> <!--A completer-->
+</head>
+
+<body bgcolor="darkgray">
+ <form>
+<!--- SECTION 1 : Credit Card info --->
+<div class="FlexDisplay">
+ <table class="CreditCardTab">
+    <!-- TITRES -->
+    <tr> <th>
+        PAY INVOICE
+    </th> </tr>
+    <!-- Cartes a choisir -->
+    <tr>
+        <td class="FlexDisplay CCard-td" style="padding-left: 50px;">  
+            <img src="./Img/IconsFiller/Credit-1-Visa.png" alt="ScSh1" width="80px" style="margin-right: 5px;">
+            <img src="./Img/IconsFiller/Credit-2-MasterCard.png" alt="ScSh1" width="80px"style="margin-right: 5px;">
+            <img src="./Img/IconsFiller/Credit-3-PayPal.png" alt="ScSh1" width="80px">
+        </td>
+    </tr>
+    <tr>
+        <td class="CCard-td"> 
+            <label class="sansSerif" for="CType">Card type: </label> <br/> 
+            <select id="lbl-CType" name="CType">
+                <option value="year24">Visa</option>
+                <option value="year25">MasterCard</option>
+                <option value="year26">PayPal</option>
+              </select> 
+        </td>
+    </tr>
+    <!--Numero Carte-->
+    <tr>
+        <td class="CCard-td">
+            <label class="sansSerif" for="cardNumber">Card Number: </label> <br/> 
+            <input class="roundInp" type="number" size="28" id="cardNumber" name="cardNumber"/> 
+         </td>
+    </tr>
+    <!-- Date Expiration -->
+    <tr>
+        <td class="CCard-td">
+            <label class="sansSerif" for="cardExpiration">Expiration Date: </label> <br/>
+            <input type="number" min="1" max="12" step="1" value="1" id="cardExpiration" name="ExpDate" onkeydown="return false"/>
+            <input type="number" min="1900" max="2099" step="1" value="2024" id="cardExpiration" name="ExpYear"  onkeydown="return false"/>
+        </td>
+    </tr>
+        <!-- Code de Securite  -->
+    <tr>
+        <td class="CCard-td"> 
+            <label class="sansSerif" for="cardSecurity">Security Number: </label> <br/>
+            <input class="roundInp" type="number" size="5" id="cardSecurity" name="cardSecurity"/> 
+        </td>
+    </tr>
+ </table>
+
+ <!-- Section qui affiche le montant a payer-->
+ <div style="margin-left: 100px;margin-top: 100px;">
+    <p> Subtotal : &nbsp;$<span id="lbl-SousTotal">0.00</span> CAD </p>
+    <p> Shipping : $0.00 CAD </p>
+    <p> Taxes : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$<span id="lbl-Tax">0.00</span> CAD </p>
+    <hr/>
+    <p> ORDER TOTAL : <i style="color:blue;">$<span id="lbl-Total">0.00</span></i>  CAD </p>
+    <hr/>
+ </div>
+</div> <!-- Display Flex END -->
+
+ <!--- SECTION 2 : Billing Adress --->
+ <h2> Billing Adress </h2>
+    <table>
+        <tr>
+            <td> 
+                <label for="Pays">Country: </label> <br/> <br/> 
+                <input list="ListPays" size="25" id="Pays" name="Pays" maxlength="10" onkeydown="return false"/> 
+                <datalist id="ListPays">
+                  <option value="Canada">
+                  <option value="USA">
+                  <option value="Mexico">
+                  <option value="Panama">
+                  <option value="Peru">
+                  <option value="Puerto-Rico">
+                  <option value="Colombia">
+                  <option value="Argentina">
+                  <option value="Chile">
+                </datalist>
+    
+            </td>
+        </tr>
+        <!--Prenom -->
+        <tr>
+            <td>
+                <label for="Pnom">First Name : </label> <br/> <br/> 
+                <input type="text" size="20" id="Pnom" name="Pnom" maxlength="30"/> 
+             </td>
+             <td style="width: 40px;"> <!--Espacement entre colonnes--></td>
+             <!-- Choisir Ville-->
+             <td>
+                <label for="city">Ville/City : </label> <br/> <br/> 
+                <input type="text" size="20" id="city" name="city" maxlength="30"/> 
+             </td>
+        </tr>
+        <!--Nom -->
+        <tr>
+            <td>
+                <label for="Nom">Last Name : </label> <br/> <br/> 
+                <input type="text" size="20" id="Nom" name="Nom" maxlength="35"/> 
+             </td>
+             <td> <!--Espacement entre colonnes--></td>
+             <!-- Choisir Province-->
+             <td>
+                <label for="states">Province/State : </label> <br/> <br/> 
+                <input type="text" size="20" id="states" name="states" maxlength="35"/> 
+             </td>
+        </tr>
+        <!-- Info Rues + Code Postale -->
+        <tr>
+            <td>
+                <label for="StrtNumb">Street Number : </label> <br/> <br/> 
+                <input type="number" size="20" id="StrtNumb" name="StrtNumb"/> 
+             </td>
+             <td> <!--Espacement entre colonnes--></td>
+             <!-- Choisir Province-->
+             <td>
+                <label for="codeZIP">Postal / Zip Code : </label> <br/> <br/> 
+                <input type="text" size="20" id="codeZIP" name="codeZIP" maxlength="35"/> 
+             </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="StrtName">Street Name : </label> <br/> <br/> 
+                <input type="text" size="20" id="StrtName" name="StrtName" maxlength="35"/> 
+             </td>
+             <td> <!--Espacement entre colonnes--></td>
+             <!-- Telephone -->
+             <td>
+                <label for="phoneNumb">Phone Number : </label> <br/> <br/> 
+                <input type="tel" size="20" id="phoneNumb" name="phoneNumb" maxlength="35"/> 
+             </td>
+        </tr>
+     </table>
+     <!--Buttons pour envoyer form-->
+     <p>
+     <input class="subBtn" type="button" value="Pay!" onclick="CheckRegex()">
+     <input class="resetBtn" type="reset" value="Delete all data" style="margin-left: 350px;">
+    </p>
+ </form>
+</body>
+</html>

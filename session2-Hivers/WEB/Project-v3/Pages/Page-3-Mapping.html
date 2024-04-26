@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/p3-Mapping.css">
+<title> Language Mapping </title>
+    <!--JS qui gere ce qui va etre cacher & montrer dans le Map avec :hover-->
+    <script src="./js/p3-flagsNbooks.js"></script>
+</head>
+
+<body bgcolor="darkblue">
+<h1> Voyez tous nos livres de diff&#233;rents languages! </h1>
+<div style="display: flex">
+<img id="Board" src="./Img/Mapping/Bookshelf-1-NonActive.png" alt="ChalkBoard" usemap="#Librarymap">
+<div style="display: block"> <!--Aligner h2 au dessus du Tableau-->
+<h2 id="TitleBestSells"> Chequez nos Best Sellers! </h2>
+<table id="BS">
+  <tr>
+    <th class="BS-titres"> Cover </th>
+    <th class="BS-titres"> Titre </th>
+    <th class="BS-titres"> Auteur </th>
+    <th class="BS-titres"> Genre </th>
+    <th class="BS-titres"> Prix </th>
+  </tr>
+
+  <tr>
+    <td class="BS-data">Image</td>
+    <td class="BS-data">MockingBird</td>
+    <td class="BS-data">Retro NorthGames</td>
+    <td class="BS-data"> Science-Fiction </td>
+    <td class="BS-data"> 230.00 $ </td>
+  </tr>
+  <tr>
+    <td class="BS-data">Image</td>
+    <td class="BS-data">Nom</td>
+    <td class="BS-data"> Prenom </td>
+    <td class="BS-data"> Fantasie </td>
+    <td class="BS-data"> 130.00 $ </td>
+  </tr>
+  <tr>
+    <td class="BS-data">Image</td>
+    <td class="BS-data">Nom</td>
+    <td class="BS-data"> Prenom </td>
+    <td class="BS-data"> Histoire </td>
+    <td class="BS-data"> 30.00 $ </td>
+  </tr>
+</table>
+</div>
+</div>
+<map name="Librarymap">
+      <area id="frenchFlag"  shape="rect" coords="290,175,125,90" onmouseover="hover('frenchFlag')" onclick="Show()" href="#">
+      <area id="englishFlag" shape="rect" coords="500,175,335,90" onmouseover="hover('englishFlag')" onclick="Show()" href="#">
+      <area id="spanishFlag" shape="rect" coords="705,175,545,90" onmouseover="hover('spanishFlag')" onclick="Show()" href="#">
+    <area id="allFlags"  shape="rect" coords="755,220,70,5" onmouseover="hover('allFlags')" onmouseout="unhover()" onclick="Show()">
+    <!-- coord: 480px height, 220 moitie-->
+      <area id="gnrSciFi" shape="rect" coords="225,370,160,280" onclick="Popup('Science!')" onmouseover="hover('gnrSciFi')" href="#">
+      <area id="gnrFant" shape="rect" coords="335,370,270,280" onclick="Popup('Fantastique!')" onmouseover="hover('gnrFant')" href="#">
+      <area id="gnrHist" shape="rect" coords="445,370,380,280" onclick="Popup('Realsitique!')" onmouseover="hover('gnrHist')" href="#">
+      <area id="gnrRealsm" shape="rect" coords="555,370,490,280" onclick="Popup('Histoire!')" onmouseover="hover('gnrRealsm')" href="#">
+      <area id="gnrKids" shape="rect" coords="665,370,600,280" onclick="Popup('Comics')" onmouseover="hover('gnrKids')" href="#">
+    <area id="allGenres" shape="rect" coords="755,480,70,220" onmouseover="hover('allGenres')" onmouseout="unhover()">
+</map>
+
+<h2> Chequez tous nos livres disponibles! </h2>
+<p> Si vous n'etes pas sur du quelle genre, aller rechercher sa definition! </p>
+<button type="button" id="btnSearch" onclick="AccesP4()"> Page 4  </button>
+<p> Acceder a la page pour acheter! </p>
+<button type="button" id="btnSearch" onclick="AccesP5()"> Page 5  </button>
+</body>
+</html>

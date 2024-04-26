@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/p4-Search.css">
+<title> Recherche - Mots clés </title>
+
+<!-- JS qui gere les chagements -->
+<script src="../Pages/js/p4-PageSearch.js"></script>
+
+</head>
+
+<body bgcolor="grey">
+
+<h1> Recherche </h1> <!--Centrer dans la page entiere-->
+<!-- Search Box + button dans meme ligne -->
+  <input type="text" id="UserInput" name="Nom" size="33" maxlength="30"/> 
+  <!-- BUTTON avec image -->
+  <input id="help" type="image" src="./Img/SearchButton.png" onclick="Searching()"> 
+  <br/><br/><br/><br/>
+  <hr/>
+  <!-- Container du txtBox + Img -->
+<div style="display:flex;"> 
+    <h2 id="TitleScreen"></h2>
+    <!-- Image a droite -->
+    <div id="DescImg"> <!-- Affiche une image en function du JS --> </div>
+</div>
+<!--Alerte a l'utilisateur si valeur invalider-->
+<span id="alerteMSG"></span>
+  <div id="DescBox" style="display: none;">
+    <!-- 1: DESCRIPTION pour Science-Fiction-->
+      <div id="desc1-SciFi">
+      <p> La science-fiction est un genre narratif, cinématographique et vidéo-ludique. Comme son nom l'indique, elle consiste à raconter des fictions reposant sur des progrès scientifiques et techniques obtenus dans un futur plus ou moins lointain (il s'agit alors également d'anticipation), parfois dans un passé fictif1 ou dans un univers parallèle au nôtre. </p>
+
+        <p> Elle met ainsi en œuvre des progrès physiquement impossibles, du moins en l'état actuel de nos connaissances, donnant les thèmes classiques du voyage dans le temps, du voyage interplanétaire ou interstellaire, 
+        de la colonisation de l'espace, de la rencontre avec des extra-terrestres, de la confrontation entre l'espèce humaine et ses créations, notamment les robots et les clones, ou de la catastrophe apocalyptique planétaire. </p>
+
+          <p> L'intrigue des récits de science-fiction peut se dérouler sur Terre (utopies, dystopies qui sont souvent des contre-utopies), dans l'espace interstellaire (vaisseau spatial dans le space opera, exoplanètes dans le planet opera) ou les deux.
+          La hard science-fiction, notamment le biopunk, le cyberpunk et le postcyberpunk (qui met en scène des robots), extrapole des connaissances actuelles scientifiques, technologiques et ethnologiques. </p>
+  
+            <p> Ce genre peut parfois être associé à d'autres, comprenant une dimension inexplicable ou imaginaire comme la religion, le fantastique (surnaturel et réalisme fantastique : mythologie, extra-terrestre, monde perdu, mondes parallèles), la fantasy (science fantasy ou space fantasy, faisant souvent intervenir la magie), ainsi que la guerre ou l'humour. </p>
+      </div>
+
+    <!-- 2: DESCRIPTION pour Fantastique -->
+      <div id="desc2-Fantasy" style="display: none;">
+      <p> La fantasie est un genre artistique et littéraire qui représente des phénomènes surnaturels imaginaires, souvent associés au mythe et souvent figurés par l'intervention ou l'emploi de la magie et de l'anachronisme. </p>
+
+        <p> On ne doit pas confondre la fantasy avec la fantaisie musicale, ni avec le mot allemand Phantasie (fanta'zi) qui désigne le fantasme psychologique. Dans la fantasie, comme dans le merveilleux, le surnaturel est généralement accepté ou même exploité pour définir les règles d'un monde imaginaire et ne suscite pas nécessairement le doute ou la peur. </p> 
+
+          <p> Cette posture distingue la fantasy du fantastique où le surnaturel perturbe les règles du monde habituel, de la science-fiction qui imagine des progrès scientifiques ou techniques, et de l'horreur où l'irrationnel suscite peur et angoisse. </p>
+
+            <p> Genre littéraire à l'origine, la fantasy recoupe les littératures de l'imaginaire et concerne aussi les autres arts. </p>
+      </div>
+
+    <!-- 3: DESCRIPTION pour Realisme -->
+      <div id="desc3-Realism" style="display: none;">
+      <p> Le réalisme est un mouvement artistique et littéraire apparu en France vers 1850. </p>
+
+      <p> Né du besoin de réagir contre le sentimentalisme romantique, il est caractérisé par une attitude de l'artiste face au réel, qui vise à représenter le plus fidèlement possible la réalité, avec des sujets et des personnages choisis dans les classes moyennes ou populaires. </p>
+
+      <p> Le roman entre ainsi dans l'âge moderne et peut dorénavant aborder des thèmes comme le travail salarié, les relations conjugales, ou les affrontements sociaux. Ce mouvement s'étendra à lensemble de l'Europe et à l'Amérique. </p>
+      </div>
+
+    <!-- 4: DESCRIPTION pour Histoire -->
+      <div id="desc4-History" style="display: none;">
+        <p> L'histoire est à la fois l'étude et l'écriture des faits et des événements passés quelles que soient leur variété et leurs complexités. Ce mot est souvent écrit avec la première lettre en majuscule. </p>
+         <p> L'histoire est également une science humaine et sociale. On désigne aussi couramment sous le terme d'histoire (par synecdoque) le passé lui-même, comme dans les leçons de l'histoire. L'histoire est un récit écrit par lequel les êtres humains, et plus particulièrement les historiens, s'efforcent de faire connaître les temps révolus. </p>
+          <p> Ces tentatives ne sont jamais entièrement indépendantes de conditionnements étrangers au domaine telle que la vision du monde de leur auteur ou sa culture, mais elles sont censées être élaborées à partir de sources plutôt que guidées par la spéculation ou l'idéologie. </p>
+
+           <p> Au cours des siècles, les historiens ont façonné leurs méthodes ainsi que les champs d'intervention, tout en réévaluant leurs sources, leur origine et leur exploitation. La discipline universitaire d'étude et écriture de l'histoire, y compris la critique des méthodes, est l'historiographie. </p>
+            <p> Elle s'appuie sur diverses sciences auxiliaires complétant selon les travaux menés la compétence générale de l'historien. Elle reste malgré tout une construction humaine, inévitablement inscrite dans son époque, susceptible d'être utilisée en dehors de son domaine, notamment à des fins d'ordre politique. </p>
+      </div>
+
+    <!-- 5: DESCRIPTION pour Histoire -->
+      <div id="desc5-Kidz" style="display: none;">
+        <p> La bande dessinée est, essentiellement francophone, publiée par des éditeurs français et/ou belges. Par extension, l'expression désigne l'ensemble des styles et des contextes éditoriaux communs aux bandes dessinées d'Europe francophone, après la Seconde Guerre mondiale. </p>
+            <p> Bien que la France et la Belgique aient chacune des auteurs reconnus de bande dessinée auparavant, la bande dessinée désignée sous le terme « franco-belge » éclot réellement dans l'immédiat après-guerre lorsque des périodiques édités en Belgique, </p>
+            <p> dont les principaux sont Le Journal de Tintin fondé en 1946 par Raymond Leblanc et Le Journal de Spirou, conquièrent le marché français. La concurrence que se livrent ces journaux ainsi que le rythme de parution hebdomadaire va entraîner un bouillonnement créatif et plusieurs auteurs vont émerger à cette période. </p> 
+              
+              <p> Les milieux et les marchés de la bande dessinée en France et en Belgique francophone deviennent dès lors indissociables : entre les bandes dessinées françaises, belges et suisses francophones, qui partagent le même contexte artistique et commercial, l'identité nationale est souvent floue. </p> 
+              <p> Les spécialistes situent la fin de l'« âge d'or » de la bande dessinée franco-belge au début des années 1970 avec l'apparition de nouveaux magazines apportant de nouveaux styles graphiques à l'instar de L'Écho des savanes et Métal hurlant. </p>
+              <p> Plusieurs auteurs de bande dessinée franco-belge ont connu une renommée internationale et, au-delà de leurs spécificités locales, ont influencé des auteurs de divers pays, notamment en Italie, en Espagne, au Japon et en Amérique Latine, principalement en Argentine. </p>
+              <p> La bande dessinée franco-belge a notamment des parentés avec la bande dessinée néerlandophone : de nombreux auteurs francophones sont en effet traduits en Flandre et aux Pays-Bas, tandis que des auteurs flamands et néerlandais publient chez des éditeurs francophones, ou sont influencés par les différentes écoles stylistiques franco-belges. </p>
+      </div>
+  </div> <!-- Fin des Descriptions -->
+<br/>
+<button type="button" id="btnSearch" onclick="AccesP5()" style="display: none;"> Allez a la <br/> page d'Achat! </button>
+</body>
+</html>

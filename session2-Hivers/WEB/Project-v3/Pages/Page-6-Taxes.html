@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/p6-TaxForm.css">
+<title> Page 6 </title>
+<!--javascript LINK to Cart.js-->
+    <script src="./js/p6-taxes.js"></script>
+</head>
+
+<body bgcolor="darkgray">
+    <table>
+        <tr> <th colspan="2"> Facture Totale </th> </tr>
+        <!-- Rangee-2+++ : Affiche tous les items que l'utilisateur veut acheter -->
+        <tr>
+          <td colspan="2"> Tous vos livres : </td>
+        </tr>
+        <tr>
+          <td id="choixTitres"> <!--Insere tous les titres des livres choisie (avec js/cookies infos)--> </td>
+          <td id="choixPrix"> <!--Insere tous les PRIX des livres choisie (avec js/cookies infos)--> </td>
+        </tr>
+
+        <tr>
+            <td> Sous-Total : </td>
+            <td id="lbl-SousTotal"> </td>
+          </tr>
+        <tr>
+          <td> GST (5%) </td>
+          <td id="lbl-GST"> </td>
+        </tr>
+        <!-- Rangee-3 : Label-QST -->
+        <tr>
+          <td> QST (9.975 %) </td>
+          <td id="lbl-QST"> </td>
+        </tr>
+        <!-- Rangee-4 : Calcul_Total -->
+        <tr>
+          <td> <b> Total </b> </td>
+          <td id="lbl-Total"> <b> $ 0.00 </b> </td>
+        </tr>
+    </table>
+    <br/>
+    <button type="button" id="btnPage7" onclick="AccesP7()"> Proceder au payement </button> 
+</body>
+</html>
