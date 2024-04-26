@@ -1,0 +1,83 @@
+body
+{  
+  background-image: radial-gradient(closest-side, #c98bc5, #964e92, #441443);
+  background-attachment: fixed; /* que la couleur prenne toute la page (=! copy/paste) */
+  display:flex; 
+}
+#iLoGo, #iTitre
+{  float: left;  }
+/* Ajuster le height en function du frameSet dans la page index */
+div 
+{  
+  height: 105px;
+  margin-left:15px; /* espacement entre chaque cases */
+}
+#iTitre
+{
+  width: 60%;
+  float:left;
+  padding-top: 25px;
+  /* TITLE-TEXT STYLES */
+  text-align: center;
+  font-size: 60px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  height: auto;
+  /* text outline */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: darkblue;
+  color: white;
+}
+#uLogin
+{
+  width: 20%;
+  height: auto;
+  font-size: 18px;
+  font-weight: bold;
+  /* IMPORTANT : pour toute garder dans 1 ligne */
+  float:left; 
+  border: 2px solid black;
+  padding: 5px;
+  background: linear-gradient(-125deg, white 9%, gold 40%);
+}
+
+/* Align du input pour user + button */
+#Username, #Userpass, #btnLogIn
+{
+  margin-left: 25px;
+  display: block;
+  margin : 0 auto; /* auto center inputs dans le div */
+  margin-bottom: 5px;
+}
+/* Grandeur du User Input */
+input
+{ font-size: 17px; }
+/* Pour connexion + deconnexion */
+button
+{
+    height: 25px;
+    width: 100px;
+    border-radius: 4px;
+}
+button:hover 
+{ background-color: darkgray;  }
+button:active 
+{ background-color: dimgray; }
+/* Specs pour button dans Titres */
+#btnLogIn
+{  visibility: visible;  }
+#btnLogOut
+{
+  display: none;
+  float: right;
+  margin-top: -15px; /* Alignement pour button Decon*/
+}
+
+#membre /* LogIn form ajustement */
+{ 
+  text-align: center;
+  margin-top: 0px; /* align inputs aux textes "Connectez-vous!" */
+  margin-bottom: 6px;
+  font-size: 20px;
+  display: block;
+}

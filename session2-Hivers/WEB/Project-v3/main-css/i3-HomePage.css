@@ -1,0 +1,109 @@
+body
+{
+    background-image: linear-gradient(crimson, orange);
+    background-attachment: fixed; /* que la couleur prenne toute la page (=! copy/paste) */
+}
+/* Titres */
+h1 
+{  font-family: verdana; }
+hr 
+{
+    width: 100%; 
+    margin-left:0;
+    border: none; /* Remove default border */
+    border-top: 4px solid darkslateblue; /* Add custom border style */
+}
+
+/* Navigateur interactif */
+.NavBox
+{
+    display: flex;
+    margin-left: 20%;
+}
+.Navigateur
+{
+    background-color: lightslategray;
+    padding: 15px;
+    width: 100px;
+    /* Ajustement */
+    margin-right: 30px;
+    margin-top : 10px;
+    border: 2px solid black;
+    border-bottom-style: none; /* enlever dessous */
+    /* text specs */
+    font-size: 23px;
+    text-align: center;
+}
+p
+{
+    font-size: 17px;
+}
+/** CONTENT : Page 1 **/
+#index1,#index2,#index3,#index4
+{
+    height: 1140px;
+    width: 700px;
+    background-color: lightslategray;
+    border: 2px solid black;
+    margin-top: -2px;
+    padding-left: 12px;
+    margin-left: 20%; /* auto center inputs dans le div */
+}
+
+th
+{
+    text-align: left;
+    font-family: verdana;
+    font-size: 30px;
+}
+/* image alignement */
+
+.imgDroite
+{ padding: 25px; }
+.imgGauche
+{ padding: 20px; }
+.imgDroite, .imgGauche
+{  width:20px;  }
+.PicGuyAlign
+{  padding-left: 100px; }
+
+/** CONTENT : Page 2 **/
+h2
+{ 
+    text-align: center;
+    font-size: 40px;
+    font-family: verdana;
+    color: white;
+}
+.Desc
+{
+    text-align: justify;
+    padding-left: 6px;
+    padding-right: 22px;
+    color: white;
+}
+
+/** CONTENT : Page 3 **/
+.BS
+{
+    border-width: 4px;
+    border-collapse: collapse;
+
+    width:650px;
+}
+.BS-data,.BS-titres
+{
+    border: 5px inset #f8bb16;
+    padding: 20px;
+    font-size: 20px;
+    background-color: antiquewhite;
+}
+.BS-titres
+{
+    background-color: tan;
+    font-size: 25px;
+}
+a
+{
+    font-size: 20px;
+}

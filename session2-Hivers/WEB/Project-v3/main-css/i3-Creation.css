@@ -1,0 +1,41 @@
+/* Titres */
+h1 
+{  font-family: sans-serif; }
+h2
+{  font-family: verdana; }
+/* fieldsets pour Users management */
+fieldset
+{
+    width: 300px;
+    padding-top: 12px; /*username align */
+    background-color: #5CB3FF;
+    box-shadow: 6px 6px #000000;
+    box-shadow: 5px 10px 20px red outset;
+}
+legend,fieldset /* couleurs bordures */
+{    
+    border: 3px outset black;
+}
+/*titre fieldset*/
+legend
+{ 
+    padding : 4px; 
+    font-weight: bolder;
+    border-style: dashed;
+    border-radius: 8px;
+}
+#crUser, #crPassW, #delUser /*align 2 inputs */
+{ margin-bottom: 8px; }
+
+button
+{
+    border-radius: 8px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2); /* shadow avec transparence */
+    height: 25px;
+}
+#btnLogIn:hover 
+{ background-color: lightgreen;  }
+#btnLogOut:hover
+{ background-color: lightcoral;  }
+button:active 
+{ background-color: gray; }
