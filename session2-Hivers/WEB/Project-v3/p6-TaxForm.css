@@ -1,0 +1,26 @@
+table 
+{  
+    border: 1px solid gray;  
+    margin-left: 100px;
+    margin-top: 20px;
+}
+th /* table title */
+{ 
+    font-size : 30px; 
+    height: 24px;
+}
+
+th,td
+{  
+    background-color: gainsboro;  
+    padding: 10px;
+    font-size: 30px;
+}
+
+#lbl-Total, #lbl-GST, #lbl-QST, input
+{  text-align: right;  }
+
+#btnPage7
+{
+    margin-left: 180px;
+}

@@ -1,0 +1,63 @@
+/** Top part: CSS pour bienvenue **/
+h1 {
+    color:purple;
+}
+#THUMBSUP
+{
+    width: 640px; /* Split en 2 (1080 pixels de l'ecran */
+    height: 500px;
+    opacity: 0;
+    /* Animation Specs */
+    animation: ImgShow 2s ease;
+    animation-fill-mode: forwards; /* animation doesnt Loop */
+}
+
+@keyframes ImgShow 
+{
+   100% { opacity: 1.0;} 
+    
+}
+.WelcomePargraph
+{
+    width: 640px;
+    color: white;
+    text-align: justify;
+    font-size: 20px;
+}
+/** Bottom part: CSS pour figures + images **/
+td
+{  vertical-align: text-top;   }
+/* specs tableaux */
+.figContainer
+{
+    background-color: white;
+    border-radius: 16px;
+    width: 340px;
+    padding: 6px 12px 6px 12px; 
+}
+li
+{   
+    padding: 12px; 
+    text-align: justify;   
+    font-size: larger;
+}
+button
+{
+    /* button size */
+    height: 50px;
+    width: 200px;
+    /* lettres + couleurs */
+    font-size:x-large;
+    font-weight: bold;
+    background-color: silver;
+    border-radius: 20px;
+}
+button:hover
+{
+    background-color: darkgray;
+    cursor: pointer; /* Changer au cursor Main*/
+}
+button:active
+{
+    background-color: gray;
+}

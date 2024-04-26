@@ -1,0 +1,62 @@
+.CreditCardTab
+{
+    border-collapse: collapse;
+    width: 360px;
+}
+th 
+{ 
+    height: 24px;
+    background-color: gainsboro;
+    /* effacer border des cotes + top */
+    border-bottom : solid 1px lightslategray;
+    border-radius: 13px 13px 0px 0px;
+
+    font-family: sans-serif;
+    font-size: 25px;
+    padding: 15px;
+}
+/*Specs pour chaque td dans les tableaux*/
+.CCard-td
+{
+    padding : 12px 10px 12px 10px;
+    background-color: white;
+}
+
+/* Specs pour Affichage du montant a payer*/
+p
+{   font-weight: bold;  }
+label, input
+{  font-size: 17px;  }
+.sansSerif, p
+{
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+/* pour les <td> qui ont besoin  seulement de 1 ligne*/
+.FlexDisplay
+{ display: flex; }
+
+/* Specs pour forms CreditCard*/
+.roundInp
+{
+    font-size: 20px;
+    height: 30px;
+    border-radius: 8px;
+    /*Enlever insets*/
+    border: solid 1.5px lightslategray;
+}
+
+/* Enlever les fleches dans Input type Nubmers */
+.roundInp::-webkit-inner-spin-button,
+.roundInp::-webkit-outer-spin-button 
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+#StrtNumb::-webkit-inner-spin-button,
+#StrtNum::-webkit-outer-spin-button 
+{
+    -webkit-appearance: none;
+    margin: 0;
+}

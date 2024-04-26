@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link rel="stylesheet" type="text/css" href="./main-css/i1-Titres.css">
+     <title>Page En-Tete</title>
+  
+    <!--JS qui va valider le LogIn du User et va changer les pages-->
+     <script src="./main-js/accountsManaging.js"></script>
+ </head>
+ <body>
+  <img src="./Pages/Img/Puzzle_Logo.png" alt="ScSh12" width="200px" style="margin-left: 115px; /* Align avec la gauche */">
+    <div id="iTitre"> Bibliotheque Casa-Tete </div>
+    <!--LOG IN SPECS-->
+    <div id= "uLogin">
+    <!-- Message <span> de Bienvenue (js) si compte = valide -->
+    <span id="message"></span>
+    <form name="frmLogIn" action="serveur.asp" methode="post">
+      <!-- Log In titres-->
+      <p id="membre"> &nbsp;Membre? Connectez-vous! </p>
+        <input type="text" size="15" id="Username" name="Nom" maxlength="30" placeholder="Enter Username"/> 
+        <input type="password" size="15" id="Userpass" name="PassW" maxlength="30" placeholder="Enter Password"/>
+        <button type="button" id="btnLogIn" onclick="connexionUser()"> Connect </button> 
+        <button type="button" id="btnLogOut" onclick="DeconxUser()"> Deconnection </button> 
+    </div>
+    </form>
+      <!--Variables qui affiche la date courante si LogIn = valide-->
+ </body>
+</html>
