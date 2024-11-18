@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- Nom: Marco-Andrés Mora     Date: 02 Mai,2024    Description: Site Web_Examen-->
+ <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> TEST </title>
+ </head>
+
+<body>
+ <h1> yo </h1>
+ <!--Affiche le chariot de l'utilisateur avec une liste de tous ce qui va acheter -->
+ <!-- Info qui serviron pour la page qui calculera les taxes -->
+ <div id="Basket">  
+    <h3 id="SousTitres" style="margin-bottom: 5px;text-align: left;"> Passez a <br/> la commande, connard </h3>
+    <button type="button" id="btnReady" onclick="AccesP6()"> 
+      <img src="./Img/BasketIcon.png" alt="basket" height="80px">
+    </button>
+      <div id="ShoppingCart"> 
+        <button type="button" id="btnReset" onclick="DeleteItems()" style="margin-top: 10px;margin-left: 30px;"> Remove Items </button>
+          <div id="ShoppingList"> <!--Inserer INFO ici avec Python --> </div>  
+      </div> 
+      <!--buttons pour effacer la liste + Cacher || Afficher liste-->
+    <div style="display: flex;margin-top: 10px;margin-bottom: 10px;">
+      <span style="margin-left: 40px;background-color: antiquewhite;padding-left:5px;padding-right:5px;">Shopping List</span>
+      <button type="button" id="btnShow" style="margin-left: 10px;"> + </button> 
+      <button type="button" id="btnHide" style="margin-left: 10px;"> - </button> 
+    </div>
+  </div>
+
+  <!----- DEBUT AFFICHAGE DES CHOIX ----->
+  <table style="margin-left: 10%;">
+      <tr>
+        <!--- r1: 1e Colonne --->
+        <td style="border: 1px solid red"> <figure>
+          <img src="{{ url_for('static', filename='IMG/img_1.png') }}" alt="Img" width="280px">
+          <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+          <figcaption class="test1">
+        <!----- CLASSE reliée au Flask ----->
+        <div class="drinks">
+          {%for booze in drinks%} <!--debut boucle FOR-->
+
+            <div id="TitleContainer" style="display: inline;">
+              <p id="drTitre" style="margin-top: 15px;"> {{booze[1]}} <!-- NOM DRINK va afficher ici --> </p> 
+            </div>
+
+            <p> Main Alcohol : <span id="drAlcohol"> {{booze[7]}} </span> </p> 
+            <div style="display: flex;padding-left:40px;">
+              <!--Radio button si on choisit avec alcohol (Default)-->
+              <input type="radio" id="nonVirg" name="fav_language" value="HTML" checked="checked">
+              <label for="nonVirg">Regular</label> 
+              <!--Radio button si on choisit sans alcohol (Virgin)--> 
+              <div style="padding-left:24px;">
+                <input type="radio" id="virg" name="fav_language" value="CSS">
+                <label for="virg">Virgin</label><br/>
+              </div>
+            </div>
+
+            <p> Ingredients : <span id="drDesc"> {{booze[2]}} </span> </p> 
+            <p id="1.desc" style="text-align: justify;padding: 0px 10px 0px 10px;margin-bottom: 3px;"> {{booze[1]}} </p> 
+            <p> Glass - <span id="drGlass"> {{booze[3]}} </span> </p> 
+            <p> Garnish : <span id="drGarnish"> {{booze[4]}} </span> </p> 
+            <p> Origins : <span id="drOrigin"> {{booze[5]}} </span>  </p> 
+            <p> Price : <span id="drPrice"> {{booze[6]}} </span> </p> 
+            </figcaption>
+            <!-- Button pour ajouter item dans le panier-->
+            <button type="button" class="btnSearch" onclick="AddItem('1.BookID','1.titres')"> ADD TO CART </button> 
+
+          {%endfor%} <!--fin boucle FOR-->
+        </div>
+        </figure> </td>
+
+      </tr>
+
+      <!--- Ranger 2 --->
+      <tr>
+      <!--- r2: 1e Colonne --->
+      <td> <figure>
+        <img src="./Img/Cover1-GeorgeOrwell.jpg" alt="Img" width="180px" style="margin-left: 75px;">
+        <!-- TAB 1 : Les infos qui s'affiche dans le tableau -->
+        <figcaption class="test2">
+          <div id="TitleContainer" style="display: inline;">
+            <select id="versionDropList" name="Version" onchange=" Virgin()" style="float :right; margin-top: 0px;">
+              <option value="" disabled selected>with Alcohol?</option>
+              <option value="nonVirgin"> Yes </option>
+              <option value="Virgin"> No </option>
+            </select>
+            <p id="2.Name" style="margin-top: 0px;"> <!-- NOM DRINK va afficher ici --> </p> 
+           </div>
+
+          <p> Ingredients : <span id="2.titres"> </span> </p> 
+          <p> Auteur : <span id="2.auteur"> </span> </p> 
+          <p> Publication : <span id="2.pub"> </span> </p> 
+          <p> Pages : <span id="2.pages"> </span>  </p> 
+          <p> Genre - <span id="2.genre"> </span> </p> 
+          <p> Description : </p> 
+          <p id="2.desc" style="text-align: justify;padding: 10px;"> </p> 
+        </figcaption>
+         <!-- Button pour ajouter item dans le panier-->
+         <button type="button" class="btnSearch" onclick="AddItem('1.BookID','1.titres')"> ADD TO CART </button> 
+      </figure> </td>
+
+      </tr>
+
+  </table>
+  <a href="/add"> Ajouter un drink </a>  
+
+</body>
+</html> 
