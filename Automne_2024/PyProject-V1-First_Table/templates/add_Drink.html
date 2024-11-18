@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Nom: Marco-Andrés Mora     Date: 02 Mai,2024    Description: Site Web_Examen-->
+ <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Ajouter un cocktail </title>
+ </head>
+
+<body>
+  <h1> Ajout </h1>
+  <form action="" method="post">
+    <!--Pas besoin de ID car 'INSERT INTO' génère auto le ID-->
+    <label>Nom : </label> <input type="text" name="cocktail" required>  <br/><br/>
+    <label>Ingredients : </label> <input type="text" name="desc" required>  <br/><br/>
+    <label>Glass Type: </label> <input type="text" name="glass" required>  <br/><br/>
+    <!--Peut etre NULL = pas besoin de required-->
+    <label>Garnish : </label> <input type="text" name="garnish">  <br/><br/>
+    <label>Origin : </label> <input type="text" name="country">  <br/><br/>
+    <label>Price : </label> <input type="number" name="price" min="1" max="12" value="1" required>  <br/><br/>
+    <label>Alcohol : </label> <input type="text" name="bottle"> <br/> <br/>
+    <!--Validation-->
+    <input type="submit" value="Submit">
+  </form>
+  <!--'/' revivent a la Page Principale-->
+  <a href="/"> Retourner a la Page d'Achats </a>
+</body>
+</html> 
